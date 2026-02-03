@@ -1,6 +1,6 @@
 # make ufs image
 
-This is how you can set up the environment to make a ufs image. There may be other methods but this is how ive done it.
+This is how you can set up the environment to make a ufs image mountable by PS5/PS4 . There may be other methods but this is how ive done it.
 
 # Prerequisites
 

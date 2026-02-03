@@ -24,7 +24,7 @@ MB=$(( (TOTAL + 1024*1024 - 1) / (1024*1024) ))
 echo "Input size: $BYTES bytes"
 echo "Image size: ${MB}MB"
 
-truncate -s "${MB}M" "$OUTPUT"
+dd if=/dev/zero of="$OUTPUT" bs=1M count=$MB status=progress
 
 MD=$(mdconfig -a -t vnode -f "$(realpath "$OUTPUT")")
 newfs -O 2 -b 32768 -f 4096 /dev/${MD}

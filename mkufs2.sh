@@ -14,9 +14,9 @@ OUTPUT="${2:-download0.dat}"
 
 # Calculate required size (dir size + 20% overhead + 10MB slack)
 BYTES=$(du -s -k "$INPUT_DIR" | awk '{print $1 * 1024}')
-OVERHEAD=$((BYTES / 5))                 # 20%
+#OVERHEAD=$((BYTES / 5))                 # 20%
 SLACK=$((10 * 1024 * 1024))             # 10MB
-TOTAL=$((BYTES + OVERHEAD + SLACK))
+TOTAL=$((BYTES + SLACK))
 
 # Round up to nearest MB
 MB=$(( (TOTAL + 1024*1024 - 1) / (1024*1024) ))
